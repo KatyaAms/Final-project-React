@@ -20,7 +20,7 @@ const [city,setCity]=useState(props.city);
       city:response.data.name,
       humidity: response.data.main.humidity,
       description:response.data.weather[0].description,
-      iconUrl:`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
 
@@ -40,7 +40,9 @@ setCity(event.target.value);
 }
 
   if (weather.ready){
-    return (<div className="Weather">
+    return (
+     <div className="landing-wrapper">
+    <div className="Weather">
       <form onSubmit={handleSubmit}>
         <div className="row">
         <div className="col-9">
@@ -56,7 +58,7 @@ setCity(event.target.value);
       </div>
       </form>
       <WeatherInfo data={weather}/>
-    
+    </div>
     </div>);
     }
     else {
