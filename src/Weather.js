@@ -20,7 +20,7 @@ const [city,setCity]=useState(props.city);
       city:response.data.name,
       humidity: response.data.main.humidity,
       description:response.data.weather[0].description,
-      iconUrl:"https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
+      iconUrl:`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
@@ -33,12 +33,12 @@ axios.get(apiUrl).then(handleResponse);
 function handleSubmit(event){
   event.preventDefault();
  search (city);
-
 }
 
 function handleCityChange(event){
 setCity(event.target.value);
 }
+
   if (weather.ready){
     return (<div className="Weather">
       <form onSubmit={handleSubmit}>
