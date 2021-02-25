@@ -28,7 +28,7 @@ const [city,setCity]=useState(props.city);
 
 function search(){
 const apiKey = "cea4eaec36371a8d64cf80cfa988df3d";
-let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
 axios.get(apiUrl).then(handleResponse);
 }
 
